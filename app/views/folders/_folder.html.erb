@@ -1,0 +1,17 @@
+<li id="folder-<%= folder.id %>" data-folder-id="<%= folder.id %>" class="display-inline folder-container">
+  <%= link_to user_folder_path(user_id: current_user.id, id: folder.id), class: "folder" do %>
+    <% if folder.folders.size > 0 %>
+      <span  class="folder-collapse">
+      </span>
+    <% end %>
+
+    <i class="fas fa-folder"></i>
+    <%= folder.name %>
+  <% end %>
+
+  <% if folder.folders.size > 0 %>
+    <ul class="sub-folders sub-folders-<%= folder.id %>">
+      <%= render folder.folders %>
+    </ul>
+  <% end %>
+</li>

@@ -1,0 +1,30 @@
+<div class="mt-3">
+	<div class="row">
+		<div class="col-md-3">
+			<ul id="folders-list">
+				<% @folders = current_user.folders.where(parent_id: nil) %>
+	        	<%= render @folders %>
+        	</ul>
+		</div>
+
+		<div class="col-md-9">
+			<ul id="articles-list" class="mt-3">
+				<% folder = if params[:id].present? then Folder.find(params[:id]) else current_user.folders.first end %>
+				<% if folder.articles.size > 0 %>
+					<% folder.articles.each do |article| %>
+						<li>
+							<i class="fas fa-link"></i> <%= article.title %> 
+
+							<div>
+								- Highlight 1 <br/>
+								- Highlight 2 
+							</div>	
+						</li>
+					<% end %>
+				<% else %>
+					<p>No articles yet</p>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
