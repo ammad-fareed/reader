@@ -12,7 +12,7 @@
 
 * Run `rake db:seed`
 
-### SQLITE3 command
+### SQLITE3 commands
 
 * This projet is run on SQLITE3 for simplicity
 
