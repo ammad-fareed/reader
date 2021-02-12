@@ -70,4 +70,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
 
+# Jquery UI
+gem 'jquery-ui-rails'
+
 gem 'devise'
